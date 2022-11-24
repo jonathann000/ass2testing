@@ -1,0 +1,9 @@
+
+
+Line 13 - daysInMonth method returns the wrong values
+
+Line 23 to 27 - Input accepts negative values
+
+Line 34 - aMonth get assigned to 0. This feels weird and
+feels like it might cause a bug, cause there is no month 0.
+

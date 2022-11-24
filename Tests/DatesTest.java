@@ -1,14 +1,9 @@
 import org.junit.jupiter.api.Test;
-
-import java.util.Date;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class DatesTest {
 
-
 //BranchCoverage
-    //for(true) AND while(true)
     @Test
     void mainforTrue() {
         String[] args = {"1", "2", "3", "4"};
@@ -16,19 +11,14 @@ class DatesTest {
         assertEquals(61, DatesImproved.daysBetween);
         // returns 33
     }
-    //for(false) AND while(true)
+
     @Test
     void mainforFalse() {
     String[] args = {"-1", "2", "3", "4"};
     DatesImproved.main(args);
-    // assert throws exception
-    assertThrows(NumberFormatException.class, () -> {
-        Integer.parseInt(args[0]);
-    });
+    assertEquals(-1, DatesImproved.daysBetween);
     }
 
-
-    //while(true) and for(true)
     @Test
     void mainWhileTrue() {
     String[] args = {"1", "1", "2", "1"};
@@ -38,8 +28,6 @@ class DatesTest {
     // returns 0
 
 
-
-    //while(false) and for(true)
     @Test
     void mainWhileFalse() {
         String[] args = {"4", "3", "2", "1"};
@@ -48,22 +36,61 @@ class DatesTest {
         // returns -126
     }
 
+    @Test
+    void sameDates(){
+        String [] args = {"1", "1", "1", "1"};
+        DatesImproved.main(args);
+        assertEquals(0, DatesImproved.daysBetween);
 
+    }
 
+    @Test
+    void firstToLastDay(){
+        String [] args = {"1", "1", "12", "31"};
+        DatesImproved.main(args);
+        assertEquals(364, DatesImproved.daysBetween);
+    }
 
-    //10 - 36
+    @Test
+    void firstAndSecondDay(){
+        String [] args = {"1", "1", "1", "2"};
+        DatesImproved.main(args);
+        assertEquals(1, DatesImproved.daysBetween);
+    }
+
+    @Test
+    void wrongMonth(){
+        String [] args = {"13", "1", "1", "2"};
+        DatesImproved.main(args);
+        assertEquals(-1, DatesImproved.daysBetween);
+    }
+
+    @Test
+    void firstPosSecNeg(){
+        String [] args = {"2", "1", "-2", "1"};
+        DatesImproved.main(args);
+        assertEquals(-1, DatesImproved.daysBetween);
+    }
+
     @Test
     void daysInMonthJanuary() {
-        DatesImproved date = new DatesImproved();
         int result = DatesImproved.daysInMonth(1);
         assertEquals(31, result);
+        //TRUE
     }
 
     @Test
     void daysInMonthApril() {
-        DatesImproved date = new DatesImproved();
         int result = DatesImproved.daysInMonth(4);
         assertEquals(30, result);
+        //FALSE
+    }
+
+    @Test
+    void daysInMonthFebruary() {
+        int result = DatesImproved.daysInMonth(2);
+        assertEquals(28, result);
+        //FALSE
     }
 
 }
