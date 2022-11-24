@@ -1,4 +1,19 @@
 
+Our first 4 tests in the DatesTest are written for for assignment 3.1, in the comments below the test we show what values
+the Dates.class file returned. Afterwards we changed the tests to be applied to the DatesImproved class.
+
+All local variables inside Dates.main, using jdb
+someMonth = 1
+someDay = 2
+laterMonth = 3
+laterDay = 4
+someDayInYear = 31
+laterDayInYear = 62
+aMonth = 3
+dayBetween = 33
+
+The hidden method is located on line 12 and is called daysInMonth.
+We enter the method on line 13 but the first line of the method is the head at line 12.
 
 Line 13 - daysInMonth method returns the wrong values
 
@@ -7,3 +22,4 @@ Line 23 to 27 - Input accepts negative values
 Line 34 - aMonth get assigned to 0. This feels weird and
 feels like it might cause a bug, cause there is no month 0.
 
+Line 47 to 48 - The variable daysBetween is calculated using faulty logic.

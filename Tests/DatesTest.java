@@ -3,38 +3,38 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class DatesTest {
 
-//BranchCoverage
+
     @Test
-    void mainforTrue() {
+    void standardInput() {
         String[] args = {"1", "2", "3", "4"};
         DatesImproved.main(args);
         assertEquals(61, DatesImproved.daysBetween);
-        // returns 33
     }
+    // returns 33
 
     @Test
-    void mainforFalse() {
+    void negativeValues() {
     String[] args = {"-1", "2", "3", "4"};
     DatesImproved.main(args);
     assertEquals(-1, DatesImproved.daysBetween);
     }
+    // returns 95
 
     @Test
-    void mainWhileTrue() {
+    void oneMonth() {
     String[] args = {"1", "1", "2", "1"};
     DatesImproved.main(args);
     assertEquals(31, DatesImproved.daysBetween);
     }
     // returns 0
 
-
     @Test
-    void mainWhileFalse() {
+    void laterMonthEarlierThanSomeMonth() {
         String[] args = {"4", "3", "2", "1"};
         DatesImproved.main(args);
         assertEquals(304, DatesImproved.daysBetween);
-        // returns -126
     }
+    // returns -126
 
     @Test
     void sameDates(){
