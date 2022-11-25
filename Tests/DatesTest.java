@@ -10,21 +10,21 @@ class DatesTest {
         DatesImproved.main(args);
         assertEquals(61, DatesImproved.daysBetween);
     }
-    // Dates.class returns
+    // Dates.class returns 33
 
     @Test
     void negativeValues() {
-        String[] args = {"-1", "2", "3", "4"};
-        DatesImproved.main(args);
-        assertEquals(-1, DatesImproved.daysBetween);
+    String[] args = {"-1", "2", "3", "4"};
+    DatesImproved.main(args);
+    assertEquals(-1, DatesImproved.daysBetween);
     }
     // Dates.class returns 95
 
     @Test
     void oneMonth() {
-        String[] args = {"1", "1", "2", "1"};
-        DatesImproved.main(args);
-        assertEquals(31, DatesImproved.daysBetween);
+    String[] args = {"1", "1", "2", "1"};
+    DatesImproved.main(args);
+    assertEquals(31, DatesImproved.daysBetween);
     }
     // Dates.class returns 0
 
@@ -43,7 +43,6 @@ class DatesTest {
         assertEquals(0, DatesImproved.daysBetween);
 
     }
-
 
     @Test
     void firstToLastDay(){
@@ -91,7 +90,7 @@ class DatesTest {
     void daysInMonthFebruary() {
         int result = DatesImproved.daysInMonth(2);
         assertEquals(28, result);
-        //Dates.class return FALSE
+        //Dates.class returns FALSE
     }
 
 }
